@@ -2,6 +2,11 @@
 
 class Cal {
 public :
+	int getGop(int a, int b)
+	{
+		return a * b;
+	}
+  
 	int getMinus(int a, int b)
 	{
 		return a - b;
@@ -20,20 +25,27 @@ TEST(t1, t2) {
 	EXPECT_EQ(1, 1);
 }
 
+TEST(CalTest, getGopTest) {
+	Cal myCal;
+	EXPECT_EQ(myCal.getGop(1, 2), 2);
+	EXPECT_EQ(myCal.getGop(0, 3), 0);
+	EXPECT_EQ(myCal.getGop(-1, -1), 1);
+}
+
 TEST(CalTest, getMinusTest) {
 	Cal testCal;
 	EXPECT_EQ(testCal.getMinus(1, 2), -1);
 	EXPECT_EQ(testCal.getMinus(3, 0), 3);
 	EXPECT_EQ(testCal.getMinus(-1, -1), 0);
 }
-  
+
 TEST(t1, TestSum) {
 	Cal c;
 	int expected = 3;
 	int actual = c.getSum(1, 2);
 	EXPECT_EQ(expected, actual);
 }
-  
+
 TEST(t1, testSumSum) {
 	int expected = 6;
 	Cal cal;
